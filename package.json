@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "npx tsc",
-    "start": "node dist/index.ts",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/index.ts\""
+    "start": "node --es-module-specifier-resolution=node dist/index.js",
+    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q  --es-module-specifier-resolution=node dist/index.js\""
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/DmitryShatalov/react-photo#readme",
   "dependencies": {
+    "@supabase/supabase-js": "^1.35.4",
     "dotenv": "^16.0.1",
     "express": "^4.18.1"
   },
