@@ -9,11 +9,10 @@ const __dirname = dirname(__filename);
 const app = express();
 const port = config.server.port ?? 5000;
 const publicPath = path.join(__dirname, '..', 'client/dist');
-console.log(publicPath)
+
 app.use(express.static(publicPath));
 
 app.get('/', async (req: Request, res: Response) => {
-    console.log(publicPath)
     res.sendFile(path.join(publicPath, 'index.html'));
 });
 
